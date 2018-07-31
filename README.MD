@@ -1,12 +1,12 @@
-# Mocking HTTP requests in Unity for Unit test 
+# Mocking HTTP Requests in Unity for Unit test 
 
 The overall objective is to mock the [**UnityWebRequest**](https://docs.unity3d.com/ScriptReference/Networking.UnityWebRequest.html).
 
-We found a solution to mock HTTP requests in Unity to write Unit test, with the help of [**Nsubstitute**](http://nsubstitute.github.io/) and a wrapper interface.
+We found a solution to mock HTTP requests in Unity to write unit test, with the help of [**Nsubstitute**](http://nsubstitute.github.io/) and a wrapper interface.
 
-To test the **UnityWebRequest**, we use two interfaces to wrap the original **UnityWebRequest** and the [**UploadHandler**](https://docs.unity3d.com/ScriptReference/Networking.UnityWebRequest-uploadHandler.html). These interfaces are **IGoedleUploadHandler** and **IGoedleWebRequest**.
+To test the **UnityWebRequest**, we use two interfaces to wrap the original **UnityWebRequest** and the [**UploadHandler**](https://docs.unity3d.com/ScriptReference/Networking.UnityWebRequest-uploadHandler.html). These interfaces are [**IGoedleUploadHandler** ](https://github.com/goedleIO/unity_http_mocking/blob/master/Assets/goedle_io/Scripts/detail/GoedleUploadHandler.cs) and [**IGoedleWebRequest**](https://github.com/goedleIO/unity_http_mocking/blob/master/Assets/goedle_io/Scripts/detail/GoedleWebRequest.cs).
 
-With the interface we are able to mock:
+With the interfaces we are able to mock:
 
 * Response Codes
 * Content
@@ -19,8 +19,7 @@ You find in this repository a minimal full running example, which can be opened 
 
 ![Unity Test Runner](http://www.goedle.io/unity/unity_test_runner.png "Unity Test Runner")
 
-
-As an example, we created a basic HTTP client in Unity to test a **UnityWebRequest**. In the unit test we can now mock **UnityWebRequest** attributes and access passed content. The following example shows how to mock a web request and validate the send JSON content and HTTP errors:
+Therefore, we created a basic [HTTP client](https://github.com/goedleIO/unity_http_mocking/blob/master/Assets/goedle_io/Scripts/detail/BasicHttpClient.cs) in Unity to test a **UnityWebRequest**. In the [unit test](https://github.com/goedleIO/unity_http_mocking/blob/master/Assets/goedle_io/Editor/Tests/TrackRequestTest.cs) we can now mock **UnityWebRequest** attributes and access passed content. The following example shows how to mock a web request and validate the send JSON content and HTTP errors:
 
 ##Test
 
