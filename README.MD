@@ -21,6 +21,31 @@ Therefore, we created a basic [HTTP client](https://github.com/goedleIO/unity_ht
 
 You find in this repository a minimal full running example, which can be opened as Unity project and directly execute with the [Unity Test Runner](https://docs.unity3d.com/Manual/testing-editortestsrunner.html). 
 
+**Directory Structure**
+
+```bash
+├───Assets/
+│   ├───goedle_io/
+│   │   ├───Editor/
+│   │   │   ├───Tests/
+│   │   │   │   ├───TrackRequestTest.cs
+│   │   │   ├───NSubstitute.dll
+│   │   ├───Plugins/
+│   │   │   ├───SimpleJSON.cs
+│   │   ├───Scripts/
+│   │   │   ├───detail/
+│   │   │   │   ├───BasicHttpClient.cs
+│   │   │   │   ├───GoedleUploadHandler.cs
+│   │   │   │   ├───GoedleWebRequest.cs
+```
+
+* TrackRequestTest.cs -> Holds an example unit test
+* BasicHttpClient.cs -> Holds the HTTP client that we want to test
+* GoedleUploadHandler.cs -> Holds the interface for wrapped `UploadHandler`
+* GoedleWebRequest.cs -> Holds the interface for the wrapped `UnityWebRequest` 
+
+When you open this project in Unity you directly run the Unity Test Runner.
+
 ![Unity Test Runner](http://www.goedle.io/unity/unity_test_runner.png "Unity Test Runner")
 
 
