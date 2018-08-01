@@ -17,11 +17,30 @@ With the interfaces we are able to mock:
 
 Therefore, we created a basic [HTTP client](https://github.com/goedleIO/unity_http_mocking/blob/master/Assets/goedle_io/Scripts/detail/BasicHttpClient.cs) in Unity to test a **UnityWebRequest**. In the [unit test](https://github.com/goedleIO/unity_http_mocking/blob/master/Assets/goedle_io/Editor/Tests/TrackRequestTest.cs) we can now mock **UnityWebRequest** attributes and access passed content. The following example shows how to mock a web request and validate the send JSON content and HTTP errors:
 
-## Test Example
+## Example
 
 You find in this repository a minimal full running example, which can be opened as Unity project and directly execute with the [Unity Test Runner](https://docs.unity3d.com/Manual/testing-editortestsrunner.html). 
 
-**Directory Structure**
+### Test
+```C#
+[Test]
+public void checkBehaviorWebRequestSendPost()
+{
+    BasicHttpClient http_client = (new GameObject("BasicHttpClient")).AddComponent();
+    IGoedleUploadHandler guh = Substitute.For();
+    IGoedleWebRequest gw = Substitute.For();
+    string stringContent = null;
+    // Here we write the value which is passed through the add function to stringContent
+    guh.add(Arg.Do(x => stringContent = x));
+    gw.isHttpError.Returns(false);
+    gw.isNetworkError.Returns(false);
+    http_client.sendPost("{\"test\": \"test\"}", gw, guh);
+    var result = JSON.Parse(stringContent);
+    Assert.AreEqual(result["test"].Value, "test");
+}
+```
+
+### Directory Structure
 
 ```bash
 ├───Assets/
