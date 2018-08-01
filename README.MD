@@ -1,4 +1,4 @@
-# Mocking HTTP Requests in Unity for Unit test 
+# Mocking HTTP Requests in Unity for Unit Tests
 
 The overall objective is to mock the [**UnityWebRequest**](https://docs.unity3d.com/ScriptReference/Networking.UnityWebRequest.html).
 
@@ -6,7 +6,7 @@ We found a solution to mock HTTP requests in Unity to write unit test, with the 
 
 To test the **UnityWebRequest**, we use two interfaces to wrap the original **UnityWebRequest** and the [**UploadHandler**](https://docs.unity3d.com/ScriptReference/Networking.UnityWebRequest-uploadHandler.html). These interfaces are [**IGoedleUploadHandler** ](https://github.com/goedleIO/unity_http_mocking/blob/master/Assets/goedle_io/Scripts/detail/GoedleUploadHandler.cs) and [**IGoedleWebRequest**](https://github.com/goedleIO/unity_http_mocking/blob/master/Assets/goedle_io/Scripts/detail/GoedleWebRequest.cs).
 
-With the interfaces we are able to mock:
+With these interfaces we are able to mock:
 
 * Response Codes
 * Content
