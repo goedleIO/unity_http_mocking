@@ -74,4 +74,4 @@ To create and validate JSON we are making use of the [**SIMPLEJSON**](http://wik
 
 We are also using these testing framework in the [goedle.io Unity SDK](https://github.com/goedleIO/sdk_unity). You can also access the goedle.io Unity SDK via the [RAGE Platform](https://www.gamecomponents.eu/content/565) and you find a hands-on-example of on how to use the SDK [here](https://http://blog.goedle.io/2017/05/30/start-your-turbine-engines-goedle-io-now-supports-unity-and-offers-a-unity-tracking-sdk/?utm_source=blog&utm_medium=textlink&utm_campaign=github). 
 
-The blog post [Fake it until you make it](https://http://blog.goedle.io) contains more detailed information and a description on how to create unit test for the **UnityWebRequest**.
+The blog post [Fake it until you make it](https://blog.goedle.io/2018/08/06/mocking-web-requests-in-unity-fake-it-until-you-make-it/?utm_source=github&utm_medium=textlink&utm_campaign=unityunittest) contains more detailed information and a description on how to create unit test for the **UnityWebRequest**.
