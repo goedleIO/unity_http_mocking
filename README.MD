@@ -1,5 +1,5 @@
 # Mocking HTTP Requests in Unity for Unit Tests
-
+[![CI Status](http://img.shields.io/travis/marcmueller86/unity_http_mocking.svg?style=flat)](https://travis-ci.org/marcmueller86/unity_http_mocking)
 The overall objective is to mock the [**UnityWebRequest**](https://docs.unity3d.com/ScriptReference/Networking.UnityWebRequest.html).
 
 We found a solution to mock HTTP requests in Unity to write unit test, with the help of [**Nsubstitute**](http://nsubstitute.github.io/) and a wrapper interface.
